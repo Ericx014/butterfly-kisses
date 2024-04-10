@@ -1,0 +1,85 @@
+@font-face {
+	font-family: defaultFont;
+	src: url("fonts/Libre_Bodoni/static/LibreBodoni-Regular.ttf");
+}
+
+:root {
+	--border-size: 2px;
+	--main-color: #f4b8aa;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: defaultFont;
+}
+
+html {
+  height: 100%;
+  background-image: linear-gradient(#f4b8aa, #fef2d7);
+}
+
+/* Form style */
+.input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.input-container > input,
+.input-container > select {
+	width: 100%;
+}
+
+.button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.form-btn {
+	width: 8vw;
+	height: 2.5vh;
+	background-color: #fff;
+	position: relative;
+	border: none;
+	border-radius: 10px;
+}
+
+.form-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	border-radius: 10px;
+	border: 1px solid var(--main-color);
+	transition: top, left, right, bottom, 100ms ease-in-out;
+}
+
+.form-btn:hover {
+	border: none;
+}
+
+.form-btn:hover::before,
+.form-btn:focus::before {
+	border: 2px solid var(--main-color);
+	border-radius: 16px;	
+	top: calc(var(--border-size) * -3);
+	left: calc(var(--border-size) * -3);
+	right: calc(var(--border-size) * -3);
+	bottom: calc(var(--border-size) * -3);
+}
+
+.container {
+	background-color: #fef2d7;
+	width: 50vw;
+	margin: 25vh auto;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
