@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const Form = () => {
+  const[remarks, setRemarks] = useState("");
+
+  const handleRemarksChange = (event) => {
+    setRemarks(event.target.value);
+  };
+	
 	return (
     <form>
       <div className="container">
@@ -26,9 +34,19 @@ const Form = () => {
           <input type="number" id="age" />
         </div>
         <div className="input-container">
-          <label htmlFor="remarks">Remarks</label>
-          <input type="text" id="remarks" />
+          <label htmlFor="remarks" value={remarks} onChange={handleRemarksChange}>Remarks</label>
+          <select name="remarks" id="remarks" value={remarks} onChange={handleRemarksChange}>
+            <option value="gay">I'm gay</option>
+            <option value="notGay">I'm not gay</option>
+            <option value="others">Others</option>
+          </select>
         </div>
+        {remarks === "others" && (
+          <div className="input-container">
+            <label htmlFor="others">Others</label>
+            <textarea type="text" id="others" />
+          </div>
+        )}
         <div className="button-container">
           <button className="form-btn" type="submit">
             Submit
@@ -37,6 +55,6 @@ const Form = () => {
       </div>
     </form>
   );
-}
+};
 
 export default Form;
