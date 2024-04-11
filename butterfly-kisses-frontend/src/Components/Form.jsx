@@ -1,11 +1,18 @@
 import { useState } from "react";
 
 const Form = () => {
-  const[remarks, setRemarks] = useState("");
+  const [remarks, setRemarks] = useState("");
+	const [clickedAnimation, setClickedAnimation] = useState(false);
 
-  const handleRemarksChange = (event) => {
-    setRemarks(event.target.value);
+  const handleRemarksChange = (e) => {
+    setRemarks(e.target.value);
   };
+
+	const bounceAnimation = (e) => {
+		e.preventDefault();
+		setClickedAnimation(true);
+		setTimeout(() => setClickedAnimation(false), 2000);
+	}
 	
 	return (
     <form>
@@ -34,13 +41,30 @@ const Form = () => {
           <input type="number" id="age" />
         </div>
         <div className="input-container">
-          <label htmlFor="remarks" value={remarks} onChange={handleRemarksChange}>Remarks</label>
-          <select name="remarks" id="remarks" value={remarks} onChange={handleRemarksChange}>
-            <option value="gay">I'm gay</option>
-            <option value="notGay">I'm not gay</option>
+          <label
+            htmlFor="remarks"
+            value={remarks}
+            onChange={handleRemarksChange}
+          >
+            Remarks
+          </label>
+          <select
+            name="remarks"
+            id="remarks"
+            value={remarks}
+            onChange={handleRemarksChange}
+          >
+            <option value="remark1">Remarks 1</option>
+            <option value="remark2">Remarks 2</option>
             <option value="others">Others</option>
           </select>
         </div>
+        {remarks !== "others" && (
+          <div className="input-container">
+            <label htmlFor="others">Others</label>
+            <textarea type="text" id="others" disabled/>
+          </div>
+        )}
         {remarks === "others" && (
           <div className="input-container">
             <label htmlFor="others">Others</label>
@@ -48,7 +72,7 @@ const Form = () => {
           </div>
         )}
         <div className="button-container">
-          <button className="form-btn" type="submit">
+          <button className={clickedAnimation ? "form-btn button-bounce" : "form-btn"} type="submit" onClick={bounceAnimation}>
             Submit
           </button>
         </div>
