@@ -100,6 +100,7 @@ const Form = () => {
             className={clickedAnimation ? "form-btn button-bounce" : "form-btn"}
             type="submit"
             onClick={bounceAnimation}
+						value="Submit"
           >
             Submit
           </button>
