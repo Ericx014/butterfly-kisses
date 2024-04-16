@@ -1,29 +1,22 @@
-@font-face {
-	font-family: defaultFont;
-	src: url("fonts/Libre_Bodoni/static/LibreBodoni-Regular.ttf");
-}
-
 :root {
 	--border-size: 2px;
 	--main-dark-color: #f4b8aa;
-	--main-light-color: #fbe2ca;
+	--main-light-color: #fdedd3;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	/* font-family: defaultFont; */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 16px;
 }
 
-html {
-  height: 100%;
-  background-image: linear-gradient(var(--main-dark-color), var(--main-light-color));
+body {
+	height: 100vh;
+  background-image: linear-gradient(180deg, var(--main-dark-color) 0%, var(--main-light-color) 100%);
 }
 
-/* Form style */
 input, select, textarea{
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -42,10 +35,15 @@ input:focus, select:focus, textarea:focus {
 	border-bottom: 3px solid var(--main-dark-color);
 }
 
+label {
+	font-weight: 600;
+}
+
 .input-container {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+	margin-bottom: 5px;
 }
 
 .input-container > input,
@@ -104,7 +102,7 @@ input:focus, select:focus, textarea:focus {
 .container {
 	background-color: #fff;
 	width: 50vw;
-	margin: 10vh auto;
+	margin: 5vh auto;
 	padding: 40px;
 	display: flex;
 	flex-direction: column;
@@ -131,6 +129,10 @@ input:focus, select:focus, textarea:focus {
 
 /* For tablets */
 @media (max-width: 768px) {
+	* {
+		font-size: 15px;
+	}
+
   .container {
     width: 70vw;
   }
@@ -143,6 +145,10 @@ input:focus, select:focus, textarea:focus {
 
 /* For mobile phones */
 @media (max-width: 480px) {
+	* {
+		font-size: 14px;
+	}
+
   .container {
     width: 90vw;
     max-width: 400px;

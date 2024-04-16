@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GoChevronDown } from "react-icons/go";
 
 const Form = () => {
   const [remarks, setRemarks] = useState("");
@@ -76,13 +77,22 @@ const Form = () => {
         {remarks !== "others" && (
           <div className="input-container">
             <label htmlFor="others">Others</label>
-            <textarea type="text" id="others" disabled placeholder="Select other remarks to enter"/>
+            <textarea
+              type="text"
+              id="others"
+              disabled
+              placeholder="Select other remarks to enter"
+            />
           </div>
         )}
         {remarks === "others" && (
           <div className="input-container">
             <label htmlFor="others">Others</label>
-            <textarea type="text" id="others" placeholder="Enter other remarks here"/>
+            <textarea
+              type="text"
+              id="others"
+              placeholder="Enter other remarks here"
+            />
           </div>
         )}
         <div className="button-container">
