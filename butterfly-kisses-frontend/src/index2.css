@@ -23,11 +23,10 @@ html {
 }
 
 /* Form style */
-input, select, textarea, option{
+input, select, textarea{
 	padding: 5px 3px;
 	border-radius: 5px;
-	border: 1px solid var(--main-dark-color);
-	color: black;
+	border: 1px solid var(--main-dark-color)
 }
 
 .input-container {
