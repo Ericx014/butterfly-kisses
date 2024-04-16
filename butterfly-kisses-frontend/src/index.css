@@ -20,9 +20,6 @@
 html {
   height: 100%;
   background-image: linear-gradient(var(--main-dark-color), var(--main-light-color));
-	webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
 }
 
 /* Form style */
@@ -31,6 +28,12 @@ input, select, textarea, option{
 	border-radius: 5px;
 	border: 1px solid var(--main-dark-color);
 	color: black;
+}
+
+select, option {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .input-container {
