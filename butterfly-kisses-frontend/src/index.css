@@ -30,6 +30,12 @@ input, select, textarea, option{
 	color: black;
 }
 
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .input-container {
 	display: flex;
 	flex-direction: column;
