@@ -17,10 +17,13 @@ body {
   background-image: linear-gradient(180deg, var(--main-dark-color) 0%, var(--main-light-color) 100%);
 }
 
-input, select, textarea{
+input, select, textarea, option, button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+}
+
+input, select, textarea{
 	padding: 5px;
 	color: black;
 	background-color: white;
