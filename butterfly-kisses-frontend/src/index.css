@@ -23,14 +23,15 @@ html {
 }
 
 /* Form style */
-input, select, textarea, option{
+input, select, textarea{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	padding: 5px 3px;
+	padding: 5px;
 	border-radius: 5px;
 	border: 1px solid var(--main-dark-color);
 	color: black;
+	background-color: white;
 }
 
 .input-container {
@@ -138,6 +139,8 @@ input, select, textarea, option{
   }
 
   .form-btn {
+		min-width: 30px;
+		min-height: 10px;
     width: 50vw;
     max-width: 80px;
   }
