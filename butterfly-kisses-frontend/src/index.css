@@ -24,16 +24,13 @@ html {
 
 /* Form style */
 input, select, textarea, option{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	padding: 5px 3px;
 	border-radius: 5px;
 	border: 1px solid var(--main-dark-color);
 	color: black;
-}
-
-select, option {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
 }
 
 .input-container {
