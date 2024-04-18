@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/participants 
+Content-Type: application/json
+
+{
+  "name": "Eric Bong",
+  "contactNo": "01133472188",
+  "email": "ericx112345@gmail.com",
+  "gender": "Male",
+  "age": "22",
+  "day": "Tuesday",
+  "session": "6620d7aee224fde2c999c28a",
+  "remarks": "Others",
+  "others": "Alergic to bullshit"
+}

@@ -1,19 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.set("strictQuery", false);
-
-const url = process.env.MONGODB_URI;
-
-console.log("connecting to", url);
-mongoose
-  .connect(url)
-  .then(() => {
-    console.log("connected to MongoDB");
-  })
-  .catch((error) => {
-    console.log("error connecting to MongoDB:", error.message);
-  });
-
 const participantSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -35,6 +21,14 @@ const participantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  day: {
+    type: String,
+    required: true,
+  },
+  session: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Session",
+  },
   remarks: {
     type: String,
     required: true,
@@ -42,7 +36,7 @@ const participantSchema = new mongoose.Schema({
   others: {
     type: String,
     required: false,
-  }
+  },
 });
 
 participantSchema.set("toJSON", {
@@ -53,4 +47,4 @@ participantSchema.set("toJSON", {
   },
 });
 
-module.exports = mongoose.model("participantSchema", participantSchema);
+module.exports = mongoose.model("Participant", participantSchema);

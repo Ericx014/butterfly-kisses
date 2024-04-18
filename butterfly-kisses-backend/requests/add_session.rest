@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "7th May 2024",
+	"session": "2:20PM - 2:40PM: Serene Mind Meditation" 
+}
