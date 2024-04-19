@@ -27,13 +27,14 @@ participantRouter.get("/:id", async (request, response, next) => {
 participantRouter.post("/", async (request, response, next) => {
   const body = request.body;
 
-  const {name, contactNo, email, gender, age, day, remarks, others} =
+  const {name, studentId, contactNo, email, gender, age, day, remarks, others} =
     request.body;
 
   try {
     const foundSession = await Session.findById(body.session);
     const newParticipant = new Participant({
       name,
+      studentId,
       contactNo,
       email,
       gender,
@@ -67,6 +68,7 @@ participantRouter.put("/:id", async (request, response, next) => {
 
   const participant = new Participant({
     name: body.name,
+		studentId: body.studentId,
     contactNo: body.contactNo,
     email: body.email,
     gender: body.gender,

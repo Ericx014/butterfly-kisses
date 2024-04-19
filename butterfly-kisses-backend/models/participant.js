@@ -5,6 +5,10 @@ const participantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+	studentId: {
+		type: String,
+		required: false
+	},
   contactNo: {
     type: Number,
     required: true,
