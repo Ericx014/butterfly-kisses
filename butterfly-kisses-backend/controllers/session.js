@@ -36,6 +36,7 @@ sessionRouter.post("/", async (request, response, next) => {
   const session = new Session({
     day: body.day,
     session: body.session,
+		maxParticipants: body.maxParticipants
   });
 
   try {
@@ -61,6 +62,7 @@ sessionRouter.put("/:id", async (request, response, next) => {
   const session = new Session({
     day: body.day,
     session: body.session,
+		maxParticipants: body.maxParticipants
   });
 
   try {
