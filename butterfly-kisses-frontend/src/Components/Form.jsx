@@ -1,10 +1,12 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import sessionService from "../Services/sessions";
 import participantService from "../Services/participants";
 
 const Form = () => {
   const [clickedAnimation, setClickedAnimation] = useState(false);
 
   const [name, setName] = useState("");
+	const [studentId, setStudentId] = useState("");
   const [contactNo, setContactNo] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
@@ -13,6 +15,18 @@ const Form = () => {
   const [session, setSession] = useState("");
   const [remarks, setRemarks] = useState("");
   const [others, setOthers] = useState("");
+  const [sessions, setSessions] = useState([]);
+
+  useEffect(() => {
+    sessionService.getAll().then((allSessions) => {
+      setSessions(allSessions);
+			console.log("Sessions", allSessions);
+    });
+  }, []);
+
+	const uniqueDays = [
+    ...new Set(sessions.map((singleSession) => singleSession.day)),
+  ];
 
   const handleRemarksChange = (e) => {
     setRemarks(e.target.value);
@@ -20,31 +34,33 @@ const Form = () => {
 
   const addParticipant = (event) => {
     event.preventDefault();
-		setClickedAnimation(true);
-		setTimeout(() => setClickedAnimation(false), 2000);
+    setClickedAnimation(true);
+    setTimeout(() => setClickedAnimation(false), 2000);
 
     const participantObject = {
       name: name,
+			studentId: studentId,
       contactNo: contactNo,
-			email: email,
-			gender: gender,
-			age: age,
-			day: day,
-			session: session,
-			remarks: remarks, 
-			others : others
+      email: email,
+      gender: gender,
+      age: age,
+      day: day,
+      session: session,
+      remarks: remarks,
+      others: others,
     };
 
     participantService.create(participantObject).then(() => {
       setName("");
-			setContactNo("");
-			setEmail("");
-			setGender("");
-			setAge("");
-			setDay("");
-			setSession("");
-			setRemarks("");
-			setOthers("");
+			setStudentId("");
+      setContactNo("");
+      setEmail("");
+      setGender("");
+      setAge("");
+      setDay("");
+      setSession("");
+      setRemarks("");
+      setOthers("");
     });
   };
 
@@ -59,6 +75,16 @@ const Form = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Ali bin Abu"
+          />
+        </div>
+        <div className="input-container">
+          <label htmlFor="name">Student ID</label>
+          <input
+            type="text"
+            id="studentId"
+            value={studentId}
+            onChange={(e) => setStudentId(e.target.value)}
+            placeholder="For TARUMT students only"
           />
         </div>
         <div className="input-container">
@@ -118,9 +144,13 @@ const Form = () => {
             <option value="" className="placeholder">
               Select an option
             </option>
-            <option value="7th May 2024">7th May 2024</option>
-            <option value="8th May 2024">8th May 2024</option>
-            <option value="9th May 2024">9th May 2024</option>
+            {uniqueDays.map((day) => {
+              return (
+                <option key={day} value={day}>
+                  {day}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div className="input-container">
@@ -134,9 +164,14 @@ const Form = () => {
             <option value="" className="placeholder">
               Select an option
             </option>
-            <option value="6620d7aee224fde2c999c28a">
-              Art of Connection Meditation
-            </option>
+            {sessions.map(
+              (singleSession) =>
+                singleSession.day == day && (
+                  <option key={singleSession.id} value={singleSession.id}>
+                    {singleSession.session}
+                  </option>
+                )
+            )}
           </select>
         </div>
         <div className="input-container">

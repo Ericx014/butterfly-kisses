@@ -13,7 +13,7 @@
 }
 
 body {
-	height: 100vh;
+	height: fit-content;
   background-image: linear-gradient(180deg, var(--main-dark-color) 0%, var(--main-light-color) 100%);
 }
 
