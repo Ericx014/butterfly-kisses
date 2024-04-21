@@ -1,0 +1,65 @@
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "⁠⁠12:00PM - 12:20PM: 平静头脑静心 Serene Mind Meditation",
+	"maxParticipants": 10
+}
+
+###
+
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "12:30PM - 1:10PM: 连结艺术静心 Art of Connection Meditation",
+	"maxParticipants": 10
+}
+
+###
+
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "⁠1:20PM - 2:00PM: 感恩艺术静心 Art of Gratitude Meditation",
+	"maxParticipants": 10
+}
+
+###
+
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "2:10PM - 2:40PM: 聆听艺术静心 Art of Listening Meditation",
+	"maxParticipants": 10
+}
+
+###
+
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "⁠2:40PM - 2:50PM: 1对1咨询  Counselling Session",
+	"maxParticipants": 3
+}
+
+###
+
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"session": "⁠2:50PM - 3:00PM: 1对1咨询  Counselling Session",
+	"maxParticipants": 3
+}
+
+

@@ -1,8 +1,0 @@
-POST http://localhost:3001/api/sessions/
-Content-Type: application/json
-
-{
-	"day": "7th May 2024",
-	"session": "⁠⁠2:50PM - 3:00PM: 1对1咨询  Counselling Session",
-	"maxParticipants": 3
-}
