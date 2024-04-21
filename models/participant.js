@@ -32,15 +32,7 @@ const participantSchema = new mongoose.Schema({
   session: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Session",
-  },
-  remarks: {
-    type: String,
-    required: true,
-  },
-  others: {
-    type: String,
-    required: false,
-  },
+  }
 });
 
 participantSchema.set("toJSON", {

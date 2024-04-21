@@ -40,9 +40,7 @@ participantRouter.post("/", async (request, response, next) => {
       gender,
       age,
       day,
-      session: foundSession._id,
-      remarks,
-      others,
+      session: foundSession._id
     });
     const savedParticipant = await newParticipant.save();
     foundSession.participants.push(savedParticipant._id);
@@ -74,9 +72,7 @@ participantRouter.put("/:id", async (request, response, next) => {
     gender: body.gender,
     age: body.age,
     day: body.day,
-    session: body.session,
-    remarks: body.remarks,
-    others: body.others,
+    session: body.session
   });
 
   try {
