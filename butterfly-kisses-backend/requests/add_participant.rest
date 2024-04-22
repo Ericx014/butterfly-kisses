@@ -2,13 +2,12 @@ POST http://localhost:3001/api/participants
 Content-Type: application/json
 
 {
-  "name": "Eric Bong",
-  "contactNo": "01133472188",
-  "email": "ericx112345@gmail.com",
-  "gender": "Male",
-  "age": "22",
-  "day": "Tuesday",
-  "session": "6620d7aee224fde2c999c28a",
-  "remarks": "Others",
-  "others": "Alergic to bullshit"
+  "name": "Seng Fan Fan",
+	"studentId": "23WKP18190",
+  "contactNo": "11133472188",
+  "email": "ericbongchengliang@gmail.com",
+  "gender": "Female",
+  "age": 22,
+  "day": "8th May 2024",
+  "session": "662684250aacfcc6bf45ea4e"
 }

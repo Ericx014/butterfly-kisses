@@ -35,6 +35,7 @@ sessionRouter.post("/", async (request, response, next) => {
 
   const session = new Session({
     day: body.day,
+		time: body.time,
     session: body.session,
 		maxParticipants: body.maxParticipants
   });

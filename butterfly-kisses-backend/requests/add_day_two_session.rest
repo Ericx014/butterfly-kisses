@@ -3,7 +3,8 @@ Content-Type: application/json
 
 {
 	"day": "8th May 2024",
-	"session": "⁠12:00PM - 12:40PM: 感恩艺术静心 Art of Gratitude Meditation",
+	"time": "⁠12:00PM - 12:40PM",
+	"session": "感恩艺术静心 Art of Gratitude Meditation",
 	"maxParticipants": 10
 }
 
@@ -14,7 +15,8 @@ Content-Type: application/json
 
 {
 	"day": "8th May 2024",
-	"session": "12:50PM - 1:20PM: 聆听艺术静心 Art of Listening Meditation",
+	"time": "12:50PM - 1:20PM",
+	"session": "聆听艺术静心 Art of Listening Meditation",
 	"maxParticipants": 10
 }
 
@@ -25,7 +27,8 @@ Content-Type: application/json
 
 {
 	"day": "8th May 2024",
-	"session": "1:30PM - 2:10PM: 意图力量静心 Art of Intention Meditation",
+	"time": "1:30PM - 2:10PM",
+	"session": "意图力量静心 Art of Intention Meditation",
 	"maxParticipants": 10
 }
 
@@ -36,6 +39,7 @@ Content-Type: application/json
 
 {
 	"day": "8th May 2024",
-	"session": "⁠⁠2:20PM - 3:00PM: 宽恕艺术静心Art of Forgiveness Meditation",
+	"time": "⁠2:20PM - 3:00PM",
+	"session": "⁠宽恕艺术静心Art of Forgiveness Meditation",
 	"maxParticipants": 10
 }

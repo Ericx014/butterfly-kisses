@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/sessions/
+Content-Type: application/json
+
+{
+	"day": "7th May 2024",
+	"time": "⁠11:30AM - 12:10PM",
+	"session": "Art of Intention Meditation",
+	"maxParticipants": 10
+}
