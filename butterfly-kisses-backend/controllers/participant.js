@@ -61,10 +61,16 @@ participantRouter.post("/", async (request, response, next) => {
       day,
       session: foundSession._id
     });
-    const savedParticipant = await newParticipant.save();
-    foundSession.participants.push(savedParticipant._id);
-    await foundSession.save();
-    response.json(savedParticipant);
+		if(foundSession.participants.length >= foundSession.maxParticipants) {
+			console.log("Session is full, please select another session")
+			response.status(400).end();
+
+		} else {
+			const savedParticipant = await newParticipant.save();
+			foundSession.participants.push(savedParticipant._id);
+			await foundSession.save();
+			response.json(savedParticipant);
+		}
   } catch (error) {
     next(error);
   }
