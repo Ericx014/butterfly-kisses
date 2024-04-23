@@ -10,7 +10,7 @@ const participantSchema = new mongoose.Schema({
 		required: false
 	},
   contactNo: {
-    type: Number,
+    type: String,
     required: true,
   },
   email: {
