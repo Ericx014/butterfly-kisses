@@ -1,9 +1,28 @@
 const participantRouter = require("express").Router();
 const Participant = require("../models/participant");
 const Session = require("../models/session");
+const jwt = require("jsonwebtoken");
 
-participantRouter.get("/", async (request, response) => {
-  try {
+const verifyToken = (request, response, next) => {
+  const authorization = request.get("authorization");
+  let token = "";
+
+  if (authorization && authorization.toLowerCase().startsWith("bearer ")) {
+    token = authorization.substring(7);
+  }
+
+  const decodedToken = jwt.verify(token, process.env.SECRET);
+
+  if (!token || !decodedToken.id) {
+    return response.status(401).json({error: "Token missing or invalid"});
+  }
+
+  request.userId = decodedToken.id;
+  next();
+};
+
+participantRouter.get("/", verifyToken, async (request, response) => {
+	try {
     const participants = await Participant.find({}).populate("session");
     response.json(participants);
   } catch (error) {
@@ -27,7 +46,7 @@ participantRouter.get("/:id", async (request, response, next) => {
 participantRouter.post("/", async (request, response, next) => {
   const body = request.body;
 
-  const {name, studentId, contactNo, email, gender, age, day, remarks, others} =
+  const {name, studentId, contactNo, email, gender, age, day} =
     request.body;
 
   try {

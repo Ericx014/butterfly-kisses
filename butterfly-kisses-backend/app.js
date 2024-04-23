@@ -3,7 +3,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const cors = require("cors");
-const adminRouter = require("./controllers/admin");
+const usersRouter = require("./controllers/users");
+const loginRouter = require("./controllers/login");
 const participantRouter = require("./controllers/participant");
 const sessionRouter = require("./controllers/session");
 const middleware = require("./utils/middleware");
@@ -28,9 +29,10 @@ app.use(express.static("dist"));
 app.use(express.json());
 app.use(middleware.requestLogger);
 
+app.use("/api/users", usersRouter);
+app.use("/api/login", loginRouter);
 app.use("/api/participants", participantRouter);
 app.use("/api/sessions", sessionRouter);
-app.use("/api/admin", adminRouter);
 
 app.use(express.static(path.join(__dirname, "dist")));
 
