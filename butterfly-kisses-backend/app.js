@@ -1,7 +1,9 @@
 const config = require("./utils/config");
 const express = require("express");
+const path = require("path");
 const app = express();
 const cors = require("cors");
+const adminRouter = require("./controllers/admin");
 const participantRouter = require("./controllers/participant");
 const sessionRouter = require("./controllers/session");
 const middleware = require("./utils/middleware");
@@ -28,6 +30,13 @@ app.use(middleware.requestLogger);
 
 app.use("/api/participants", participantRouter);
 app.use("/api/sessions", sessionRouter);
+app.use("/api/admin", adminRouter);
+
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
