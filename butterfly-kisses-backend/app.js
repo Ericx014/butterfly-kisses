@@ -6,7 +6,9 @@ const cors = require("cors");
 const usersRouter = require("./controllers/users");
 const loginRouter = require("./controllers/login");
 const participantRouter = require("./controllers/participant");
+const makeupparticipantRouter = require("./controllers/makeupparticipant");
 const sessionRouter = require("./controllers/session");
+const makeupsessionRouter = require("./controllers/makeupsession");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
@@ -33,6 +35,8 @@ app.use("/api/users", usersRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/participants", participantRouter);
 app.use("/api/sessions", sessionRouter);
+app.use("/api/makeupsessions", makeupsessionRouter);
+app.use("/api/makeupparticipants", makeupparticipantRouter);
 
 app.use(express.static(path.join(__dirname, "dist")));
 

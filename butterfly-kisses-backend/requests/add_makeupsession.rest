@@ -1,0 +1,71 @@
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "7th May 2024",
+	"time": "⁠11:00AM - 1:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on The Malay Cadaverie",
+	"maxParticipants": 15
+}
+
+###
+
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "7th May 2024",
+	"time": "3:00PM - 5:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on The Chinese Cadaverie",
+	"maxParticipants": 15
+}
+
+###
+
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "8th May 2024",
+	"time": "10:00PM - 12:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on The Chinese Cadaverie",
+	"maxParticipants": 15
+}
+
+###
+
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "8th May 2024",
+	"time": "⁠12:00PM - 2:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on The Indian Cadaverie",
+	"maxParticipants": 15
+}
+
+###
+
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"time": "⁠11:00PM - 1:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on a Child's Cadaverie",
+	"maxParticipants": 15
+}
+
+###
+
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "9th May 2024",
+	"time": "⁠3:00PM - 5:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on a Child's Cadaverie",
+	"maxParticipants": 15
+}
+
+

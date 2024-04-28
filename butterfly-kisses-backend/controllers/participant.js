@@ -1,27 +1,8 @@
 const participantRouter = require("express").Router();
 const Participant = require("../models/participant");
 const Session = require("../models/session");
-const jwt = require("jsonwebtoken");
 
-const verifyToken = (request, response, next) => {
-  const authorization = request.get("authorization");
-  let token = "";
-
-  if (authorization && authorization.toLowerCase().startsWith("bearer ")) {
-    token = authorization.substring(7);
-  }
-
-  const decodedToken = jwt.verify(token, process.env.SECRET);
-
-  if (!token || !decodedToken.id) {
-    return response.status(401).json({error: "Token missing or invalid"});
-  }
-
-  request.userId = decodedToken.id;
-  next();
-};
-
-participantRouter.get("/", verifyToken, async (request, response) => {
+participantRouter.get("/", async (request, response) => {
 	try {
     const participants = await Participant.find({}).populate("session");
     response.json(participants);

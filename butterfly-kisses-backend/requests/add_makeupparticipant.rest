@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/participants 
+POST http://localhost:3000/api/makeupparticipants 
 Content-Type: application/json
 
 {
@@ -9,5 +9,5 @@ Content-Type: application/json
   "gender": "Female",
   "age": 22,
   "day": "7th May 2024",
-  "session": "662684250aacfcc6bf45ea4e"
+  "session": "662e6b5d3f1f0404cbd27f44"
 }
