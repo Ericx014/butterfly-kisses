@@ -68,4 +68,14 @@ Content-Type: application/json
 	"maxParticipants": 15
 }
 
+###
 
+POST http://localhost:3000/api/makeupsessions/
+Content-Type: application/json
+
+{
+	"day": "8th May 2024",
+	"time": "⁠3:00PM - 5:00PM",
+	"session": "Demonstration of Cleaning & Makeup Procedures on The Malay Cadaverie",
+	"maxParticipants": 15
+}

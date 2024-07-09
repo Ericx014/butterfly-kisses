@@ -1,2 +1,2 @@
-DELETE http://localhost:3001/api/participants/662691d40aacfcc6bf45eb8e
+DELETE http://localhost:3000/api/participants/6637a731e69f740b2666fd2b
 Content-Type: application/json
